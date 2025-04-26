@@ -10,4 +10,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'login');
     Route::post('/logout', 'logout')->middleware('auth:sanctum');
     Route::get('/profile', 'profile')->middleware('auth:sanctum');
+    Route::post('/profile-update', 'profileUpdate')->middleware('auth:sanctum');
+    Route::post('/password-update', 'passwordUpdate')->middleware('auth:sanctum');
+    Route::post('/forgot-password', 'forgotPassword')->middleware('auth:sanctum')->name('password.reset');
 });
